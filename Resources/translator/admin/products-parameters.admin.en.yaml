@@ -1,0 +1,16 @@
+page:
+
+  index: 'Packaging options'
+  edit: 'Edit packaging options'
+
+breadcrumb:
+
+  index: 'Product packaging parameters'
+  edit: 'Edit packaging options'
+
+
+success:
+  edit: 'Packaging parameters updated successfully'
+
+danger:
+  edit: '%s: Error updating packaging options'
