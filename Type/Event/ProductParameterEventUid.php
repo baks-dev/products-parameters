@@ -1,17 +1,17 @@
 <?php
 /*
- *  Copyright 2023.  Baks.dev <admin@baks.dev>
- *  
+ *  Copyright 2024.  Baks.dev <admin@baks.dev>
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is furnished
  *  to do so, subject to the following conditions:
- *  
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- *  
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL THE
@@ -23,32 +23,18 @@
 
 declare(strict_types=1);
 
-namespace BaksDev\Products\Parameters;
+namespace BaksDev\Products\Parameters\Type\Event;
 
-use DirectoryIterator;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
+use BaksDev\Core\Type\UidType\Uid;
+use Symfony\Component\Uid\AbstractUid;
 
-class BaksDevProductsParametersBundle extends AbstractBundle
+
+final class ProductParameterEventUid extends Uid
 {
-    public const string NAMESPACE = __NAMESPACE__.'\\';
 
-    public const string PATH = __DIR__.DIRECTORY_SEPARATOR;
+    public const string TEST = '51483b50-7b2e-70e0-aa43-543e9d1d3460';
 
-    public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
-    {
-        $services = $container->services()
-            ->defaults()
-            ->autowire()
-            ->autoconfigure();
+    public const string TYPE = 'product_parameter_event';
 
-        $services->load(self::NAMESPACE, self::PATH)
-            ->exclude([
-                self::PATH.'{Entity,Resources,Type}',
-                self::PATH.'**/*Message.php',
-                self::PATH.'**/*DTO.php',
-                self::PATH.'**/*Test.php',
-            ]);
-    }
+
 }
