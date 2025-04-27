@@ -64,24 +64,24 @@ class ProductParameterEvent extends EntityEvent
 
 
     /** Неизменяемые параметры */
-    #[ORM\OneToOne(targetEntity: ProductParameterInvariable::class, mappedBy: 'event', cascade: ['all'])]
+    #[ORM\OneToOne(targetEntity: ProductParameterInvariable::class, mappedBy: 'event', cascade: ['all'], fetch: 'EAGER')]
     private ProductParameterInvariable $invariable;
 
     /**
      * Свойства карточки
      */
-    #[ORM\OneToMany(targetEntity: ProductParameterProperty::class, mappedBy: 'event', cascade: ['all'])]
+    #[ORM\OneToMany(targetEntity: ProductParameterProperty::class, mappedBy: 'event', cascade: ['all'], fetch: 'EAGER')]
     private Collection $property;
 
 
     /** Параметры упаковки */
-    #[ORM\OneToOne(targetEntity: ProductParameterPackage::class, mappedBy: 'event', cascade: ['all'])]
+    #[ORM\OneToOne(targetEntity: ProductParameterPackage::class, mappedBy: 'event', cascade: ['all'], fetch: 'EAGER')]
     private ?ProductParameterPackage $package = null;
 
     /**
      * Модификатор
      */
-    #[ORM\OneToOne(targetEntity: ProductParameterModify::class, mappedBy: 'event', cascade: ['all'])]
+    #[ORM\OneToOne(targetEntity: ProductParameterModify::class, mappedBy: 'event', cascade: ['all'], fetch: 'EAGER')]
     private ProductParameterModify $modify;
 
 
