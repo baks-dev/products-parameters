@@ -1,6 +1,6 @@
 # BaksDev Product Parameters
 
-[![Version](https://img.shields.io/badge/version-7.2.1-blue)](https://github.com/baks-dev/products-parameters/releases)
+[![Version](https://img.shields.io/badge/version-7.2.2-blue)](https://github.com/baks-dev/products-parameters/releases)
 ![php 8.4+](https://img.shields.io/badge/php-min%208.4-red.svg)
 [![packagist](https://img.shields.io/badge/packagist-green)](https://packagist.org/packages/baks-dev/products-parameters)
 
